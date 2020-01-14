@@ -1,6 +1,7 @@
 var	grid = true,
 	gridMargin = 0,
-	gridColor = "#545454";
+	gridColor = "#333333",
+	canvasColor = "#111111";
 	
 var renderInterval = 1000 / 30;
 
@@ -55,7 +56,7 @@ var sCtx = $("#scratch")[0].getContext("2d");
 sCtx.canvas.width = blockWidth + blockMargin;
 sCtx.canvas.height = blockHeight + blockMargin;
 
-sCtx.fillStyle="#111111";
+sCtx.fillStyle=canvasColor;
 sCtx.fillRect(
 	0,
 	0,
@@ -88,6 +89,7 @@ function renderPreUpdate() {
 // Render
 function render() {
 	// Clear the board
+	ctx.fillStyle = canvasColor;
 	ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 	//ctx.rotate(1 * Math.PI/180);
 	if (!paused) {
@@ -100,7 +102,7 @@ function render() {
 	// Draw the grid
 	ctx.fillStyle = pat;
 	ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-	/*if (grid) {
+	if (grid) {
 		ctx.fillStyle = gridColor;
 		for (var x = 0; x < width; x++) {
 			for (var y = 0; y < height; y++) {
@@ -111,7 +113,7 @@ function render() {
 					blockHeight - gridMargin * 2);
 			}
 		}
-	}*/
+	}
 	
 	teams.forEach(function (team) {
 		if (team.render !== undefined) {
