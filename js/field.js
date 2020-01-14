@@ -1,3 +1,5 @@
+"use strict";
+
 var updateInterval = 1000 / 20;
 
 var dots = [];
@@ -290,7 +292,7 @@ var mainAI = [
 	tasks.reaper,
 	[tasks.wander, 0.30],
 	[tasks.attack, 0.30],
-//	[tasksflee, 0.50],
+//	[tasks.flee, 0.50],
 	[tasks.hive, 0.30],
 	[tasks.mitosis, 0.03],
 //	[tasks.breed, 0.01],
